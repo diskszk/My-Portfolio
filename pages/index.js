@@ -10,14 +10,16 @@ const Home = () => {
         <title>{siteTitle}</title>
       </Head>
       <div className={utilStyles.viewFirst}>
-        <div className={utilStyles.transitions}>
-          <h1>Portforio Site</h1>
-          <div>
+        <div className={utilStyles.viewFirst_contants}>
+          <h1>Portfolio Site</h1>
+          {/* <h1>Daisuke Suzuki's Portfolio Site</h1> */}
+          <p>Thanks for visiting!</p>
+          <div className={utilStyles.buttonContainer}>
             <Link href="/profile">
-              <a>Profile</a>
+              <a className={utilStyles.viewFirst_button}>Profile</a>
             </Link>
             <Link href="/works">
-              <a>Works</a>
+              <a className={utilStyles.viewFirst_button}>Works</a>
             </Link>
           </div>
         </div>

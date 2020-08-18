@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
-export const siteTitle = ` Daizuke Suzukiのポートフォリオサイト`;
+export const siteTitle = `Daizuke Suzukiのポートフォリオサイト`;
 
 const Layout = ({ children, home }) => {
   return (
