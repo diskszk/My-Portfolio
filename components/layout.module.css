@@ -1,25 +1,27 @@
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
-}
-
 .header {
+  height: 64px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.headerImage {
-  width: 6rem;
-  height: 6rem;
+.header_navigation {
+  padding: 1px;
 }
 
-.headerHomeImage {
-  width: 8rem;
-  height: 8rem;
+.header_top {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.backToHome {
-  margin: 3rem 0 0;
+.header a {
+  font-weight: bold;
+  font-size: 36px;
 }
+
+.humbergerMenu {
+  display: none;
+}
+/*# sourceMappingURL=layout.module.css.map */

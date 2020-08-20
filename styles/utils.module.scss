@@ -1,63 +1,49 @@
+
 /* FirstView */
 .viewFirst {
   position: relative;
   height: 100vh;
   width: 100%;
 }
-
 .viewFirst img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
-
 .viewFirst_contants {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -70%);
-          transform: translate(-50%, -70%);
+  transform: translate(-50%, -70%);
   text-align: center;
   margin: 0 auto;
 }
-
 .viewFirst h1 {
   color: #efefef;
   font-size: 3rem;
 }
-
 .viewFirst p {
   color: #efefef;
   font-size: 24px;
   margin-bottom: 2.5rem;
 }
-
 .buttonContainer {
   width: 360px;
   margin: 52px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .viewFirst_button {
   display: inline-block;
   border: solid 2px #67c5ff;
   border-radius: 3px;
-  -webkit-transition: .4s;
   transition: .4s;
   height: 44px;
   width: 120px;
-  background-color: rgba(239, 239, 239, 0.3);
+  background-color: rgba(239, 239, 239, .3);
   color: #efefef;
   line-height: 44px;
 }
-
 .viewFirst_button:hover {
   background-color: #67c5ff;
 }
-/*# sourceMappingURL=utils.module.css.map */
