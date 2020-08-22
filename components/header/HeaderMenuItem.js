@@ -2,13 +2,12 @@
 import Link from 'next/link';
 
 const HeaderMenuItem = props => {
-  const { content, path } = props;
+  const { page } = props;
+
   return (
-    <li>
-      <Link href={path}>
-        <a>{content}</a>
-      </Link>
-    </li>
+    <Link href={page.path}>
+      <a>{page.contents}</a>
+    </Link>
   );
 }
 

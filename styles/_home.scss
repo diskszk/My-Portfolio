@@ -1,0 +1,76 @@
+@import "./variable";
+$text-color: #efefef;
+
+/* FirstView */
+.view-first {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  h1 {
+    color: $text-color;
+    // font-size: 3rem;
+    margin: 0;
+  }
+  p {
+    color: $text-color;
+    font-size: 36px;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.home-contents {
+  background-color: $off-white;
+
+  &-cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 16px;
+
+    li:hover {
+      cursor: pointer;
+    }
+  }
+  &-card {
+    width: 50%;
+    text-align: center;
+    height: 480px;
+        
+    div {
+      margin: 0 auto;
+      height: 320px;
+      width: 320px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    width: 100%;
+    font-size: 32px;
+  }
+  .home-contents {
+    &-card {
+      border: solid 4px $text-color;
+      width: 100%;
+      flex-direction: column;
+      margin: 0 auto 4px 0;
+    }
+  }
+}
