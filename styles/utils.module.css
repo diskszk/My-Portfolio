@@ -1,17 +1,1 @@
-.button {
-  display: inline-block;
-  border: solid 2px #67c5ff;
-  border-radius: 3px;
-  -webkit-transition: .4s;
-  transition: .4s;
-  height: 44px;
-  width: 120px;
-  background-color: rgba(239, 239, 239, 0.3);
-  color: #efefef;
-  line-height: 44px;
-}
-
-.button:hover {
-  background-color: #67c5ff;
-}
-/*# sourceMappingURL=utils.module.css.map */
+/* No CSS *//*# sourceMappingURL=utils.module.css.map */

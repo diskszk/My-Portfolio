@@ -2,11 +2,10 @@
 
 header {
   z-index: 1;
-  background-color: $off-white;
-  height: 64px;
+  background-color: rgba($off-white, .96);
+  height: $header-height;
   margin: 0;
   display: flex;
-  // position: relative;
   position: fixed;
   width: 100%;
   
@@ -35,7 +34,7 @@ header {
     left: -50%;
     height: 100vh;
     transition: all 0.25s;
-    background-color: $off-white;
+    background-color: rgba($off-white, .96);
   }
   &-sidemenu {
     padding-top: 16px;
@@ -73,15 +72,6 @@ header {
 
     &:checked ~ aside {
       left: 0;
-    }
-  }
-}
-
-@media (max-width:900px) {
-  header {
-    height: 52px;
-    a {
-      line-height: 52px;
     }
   }
 }

@@ -1,7 +1,7 @@
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 import ContentsCard from "./ContentsCard";
-import {pages} from '../../pages/index'
+import {pages} from '../layout';
 
 const Contents = () => {
 
