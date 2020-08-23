@@ -1,0 +1,15 @@
+@import "./variable";
+$dark-gray: #444;
+$footer-height: 72px;
+
+footer {
+  height: $footer-height;
+  background-color: $dark-gray;
+
+  p {
+    text-align: right;
+    line-height: $footer-height;
+    padding-right: 12px;
+    color: $off-white;
+  }
+}

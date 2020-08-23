@@ -1,50 +1,9 @@
 // 共通で使用する部品のCSSを書いておき、使うときはそれぞれの設定で上書きする
 
-/* FirstView */
-.viewFirst {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-}
-.viewFirst img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-.viewFirst_contants {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-  text-align: center;
-  margin: 0 auto;
-}
-.viewFirst h1 {
-  color: #efefef;
-  font-size: 3rem;
-}
-.viewFirst p {
-  color: #efefef;
-  font-size: 24px;
-  margin-bottom: 2.5rem;
-}
-.buttonContainer {
-  width: 360px;
-  margin: 52px auto;
-  display: flex;
-  justify-content: space-between;
-}
-.viewFirst_button {
-  display: inline-block;
-  border: solid 2px #67c5ff;
-  border-radius: 3px;
-  transition: .4s;
-  height: 44px;
-  width: 120px;
-  background-color: rgba(239, 239, 239, .3);
-  color: #efefef;
-  line-height: 44px;
-}
-.viewFirst_button:hover {
-  background-color: #67c5ff;
-}
+// .my-icon {
+//   margin: 28px auto;
+//   height: 200px;
+//   width: 200px;
+//   border-radius: 50%;
+//   filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+// }

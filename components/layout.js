@@ -1,7 +1,31 @@
 import Head from 'next/head';
-import Header from './Header';
+import Header from './header/Header';
+import Footer from './footer/Footer';
 
 export const siteTitle = `Daizuke Suzukiのポートフォリオサイト`;
+
+export const pages = {
+  home: {
+    contents: "Home",
+    path: "/"
+  },
+  profile: {
+    contents: "Profile",
+    path: "/profile"
+  },
+  works: {
+    contents: "Works",
+    path: "/works"
+  },
+  studies: {
+    contents: "Studies",
+    path: "#"
+  },
+  contact: {
+    contents: "Contact",
+    path: "#"
+  }
+}
 
 const Layout = ({ children }) => {
   return (
@@ -12,6 +36,8 @@ const Layout = ({ children }) => {
       </Head>
       <Header />
       <main>{children}</main>
+      <div className="blank-middle" />
+      <Footer />
     </>
   );
 }
