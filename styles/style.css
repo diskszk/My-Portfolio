@@ -173,15 +173,6 @@ footer p {
   }
 }
 
-.profile {
-  padding-top: 64px;
-}
-
-.profile h2 {
-  text-align: center;
-  font-weight: normal;
-}
-
 .profile-info {
   max-width: 460px;
   margin: 0 auto;
@@ -192,6 +183,17 @@ footer p {
   .profile-info {
     padding-left: 16px;
   }
+}
+
+.contact-form {
+  width: 70%;
+  margin: 0 auto;
+  padding: 8px 24px;
+}
+
+.contact-button-container {
+  padding: 16px 8px;
+  text-align: right;
 }
 
 main {
@@ -213,5 +215,14 @@ main {
   border-radius: 50%;
   -webkit-filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
           filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+}
+
+.page {
+  padding-top: 64px;
+}
+
+.page h1 {
+  text-align: center;
+  font-weight: normal;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Layout, {siteTitle} from "../components/layout";
-import Main from "../components/profile/Main";
+import MyIcon from "../components/MyIcon";
+import Info from "../components/profile/Info";
 
 const Profile = () => {
   return (
@@ -8,7 +9,12 @@ const Profile = () => {
       <Head>
         <title>プロフィール | {siteTitle}</title>
       </Head>
-      <Main />
+        <article className="page profile">
+        <MyIcon />
+        <h1>Profile</h1>
+        <div className="blank-middle" />
+        <Info />
+      </article>
     </Layout>
   );
 }

@@ -23,7 +23,7 @@ export const pages = {
   },
   contact: {
     contents: "Contact",
-    path: "#"
+    path: "/contact"
   }
 }
 
