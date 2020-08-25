@@ -1,4 +1,4 @@
-import { react, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import TextInput from "./TextInput";
 import Button from '@material-ui/core/Button';
 import { SendNotificationToSlack } from './SendNotificationToSlack';
@@ -19,10 +19,9 @@ const ContactForms = () => {
     setDescription(event.target.value);
   });
 
-  // 追加
   const clickSendButton = () => {
     SendNotificationToSlack(name, email, description);
-
+      
     // 入力フォームを初期化
     setName("");
     setEmail("");
@@ -44,7 +43,6 @@ const ContactForms = () => {
         value={description} type={"text"} onChange={inputDescription}
       />
       <div className="contact-button-container">
-        {/* 追加 */}
         <Button
           onClick={clickSendButton}
           variant="contained"

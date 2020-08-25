@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout, {siteTitle} from "../components/layout";
 import MyIcon from "../components/MyIcon";
 import Info from "../components/profile/Info";
+import AccountInfoContainer from '../components/profile/AccountInfoContainer';
 
 const Profile = () => {
   return (
@@ -14,6 +15,11 @@ const Profile = () => {
         <h1>Profile</h1>
         <div className="blank-middle" />
         <Info />
+        <div className="blank-middle" />
+        <h1>Accounts</h1>
+        <AccountInfoContainer />
+        <div className="blank-middle" />
+        <div className="blank-middle" />
       </article>
     </Layout>
   );

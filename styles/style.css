@@ -173,10 +173,39 @@ footer p {
   }
 }
 
+.profile h1 {
+  text-align: center;
+  color: #444;
+}
+
 .profile-info {
   max-width: 460px;
   margin: 0 auto;
   padding-left: 64px;
+}
+
+.profile .account-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 16px 8px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile .account-info-container li {
+  padding: 0 12px;
+}
+
+.profile .account-info-container li .app-icon {
+  height: 60px;
+  width: 60px;
+}
+
+.profile .account-info-container li .app-icon a {
+  display: inline-block;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
@@ -194,6 +223,12 @@ footer p {
 .contact-button-container {
   padding: 16px 8px;
   text-align: right;
+}
+
+.under-edit {
+  padding-top: 64px;
+  text-align: center;
+  min-height: 100vh;
 }
 
 main {

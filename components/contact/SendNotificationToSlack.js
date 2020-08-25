@@ -17,5 +17,10 @@ export const SendNotificationToSlack = (name, email, description) => {
     body: JSON.stringify(payload)
   }).then(() => {
     alert("お問い合わせの送信が完了致しました。");
+    return;
+  }).catch((error) => {
+    console.error("Error!", error);
+    alert("エラーが発生しました。\nしばらく待ってから今一度お試しください。");
+    return;
   });
 }

@@ -55,7 +55,6 @@ const HumbergerMenu = () => {
             <HeaderMenuItem page={pages.contact} />
           </li>
         </ul>
-        {/* <Footer /> */}
       </aside>
     </div>
   );

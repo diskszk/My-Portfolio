@@ -2,10 +2,36 @@
 
 .profile {
 
+  h1 {
+    text-align: center;
+    color: #444;
+  }
+
   &-info {
     max-width: 460px;
     margin: 0 auto;
     padding-left: 64px;
+  }
+
+  .account-info-container {
+    display: flex;
+    // margin: 0 auto;
+    padding: 16px 8px;
+    justify-content: center;
+
+    li {
+      padding: 0 12px;
+
+      .app-icon {
+        height: 60px;
+        width: 60px;
+
+        a {
+          display: inline-block;
+          text-align: center;
+        }
+      }
+    }
   }
 }
 

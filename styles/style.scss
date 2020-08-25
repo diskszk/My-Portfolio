@@ -6,6 +6,8 @@
 @import "./variable";
 @import "./utils.module.scss";
 
+@import "./under-edit";
+
 main {
   background-color: $white;
   // min-height: 100vh;
