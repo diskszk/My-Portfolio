@@ -3,11 +3,11 @@ import Contents from './Contents';
 
 const Home = () => {
   return (
-    <main>
+    <article>
       <FirstView />
       <div className="blank-middle" />
       <Contents />
-    </main>
+    </article>
   );
 }
 

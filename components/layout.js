@@ -19,11 +19,11 @@ export const pages = {
   },
   studies: {
     contents: "Studies",
-    path: "#"
+    path: "/studies"
   },
   contact: {
     contents: "Contact",
-    path: "#"
+    path: "/contact"
   }
 }
 
@@ -36,7 +36,6 @@ const Layout = ({ children }) => {
       </Head>
       <Header />
       <main>{children}</main>
-      <div className="blank-middle" />
       <Footer />
     </>
   );

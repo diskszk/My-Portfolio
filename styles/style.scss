@@ -2,8 +2,11 @@
 @import "./footer";
 @import "./home";
 @import "./profile";
+@import "./contact";
 @import "./variable";
 @import "./utils.module.scss";
+
+@import "./under-edit";
 
 main {
   background-color: $white;
@@ -12,11 +15,9 @@ main {
 .blank {
   &-small {
     height: 16px;
-    // background-color: $off-white;
   }
   &-middle {
     height: 24px;
-    // background-color: $off-white;
   }
 }
 
@@ -26,4 +27,13 @@ main {
   width: 200px;
   border-radius: 50%;
   filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+}
+
+.page {
+  padding-top: $header-height;
+  
+  h1 {
+    text-align: center;
+    font-weight: normal;
+  }
 }

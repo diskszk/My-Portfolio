@@ -5,7 +5,7 @@ import Home from '../components/home/Home';
 // import Contents from '../components/home/Contents';
 
 
-const Main = () => {
+const Index = () => {
   return (
     <Layout>
       <Head>
@@ -16,4 +16,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default Index;

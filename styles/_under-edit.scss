@@ -1,0 +1,6 @@
+@import './variable';
+.under-edit {
+  padding-top: $header-height;
+  text-align: center;
+  min-height: 100vh;
+}
