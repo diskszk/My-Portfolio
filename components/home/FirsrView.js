@@ -1,4 +1,4 @@
-import MyIcon from "../MyIcon";
+import MyIcon from "../common/MyIcon";
 
 const FirstView = () => {
   return (

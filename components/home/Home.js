@@ -1,12 +1,15 @@
 import FirstView from './FirsrView';
-import Contents from './Contents';
+import Contents from '../common/Contents';
+import { datas } from './ContentsDatas';
 
 const Home = () => {
   return (
     <article>
       <FirstView />
       <div className="blank-middle" />
-      <Contents />
+      <Contents 
+        datas={datas}
+      />
     </article>
   );
 }

@@ -1,28 +1,16 @@
 import AccountInfo from './AccountInfo';
-
-export const accounts = [
-  {
-    app: "GitHub",
-    url: "https://github.com/diskszk",
-    icon: "/images/icons/GitHub-Mark-64px.png"
-  },
-  {
-    app: "Qiita",
-    url: "https://qiita.com/diskszk",
-    icon: "/images/icons/favicon.png"
-  }
-];
+import { datas } from './AccountsDatas';
 
 const AccountInfoContainer = () => {
   return (
     <ul className="account-info-container">
-      {accounts.map((account, index) => {
+      {datas.map((data, index) => {
         return (
           <AccountInfo
-            app={account.app}
-            url={account.url}
-            icon={account.icon}
-            index={index}
+            app={data.app}
+            url={data.url}
+            icon={data.icon}
+            key={index}
           />
         );
       })}

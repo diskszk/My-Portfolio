@@ -8,8 +8,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 import EmailIcon from '@material-ui/icons/Email';
 
 import HeaderMenuItem from './HeaderMenuItem';
-import {pages} from '../layout';
-
+import { pages } from './PagesData';
 const HumbergerMenu = () => {
 
 
