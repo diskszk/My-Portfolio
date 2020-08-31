@@ -10,7 +10,7 @@ const Profile = () => {
       <Head>
         <title>プロフィール | {siteTitle}</title>
       </Head>
-        <article className="page profile">
+      <article className="page profile">
         <MyIcon />
         <h1>Profile</h1>
         <div className="blank-middle" />
@@ -18,8 +18,6 @@ const Profile = () => {
         <div className="blank-middle" />
         <h1>Accounts</h1>
         <AccountInfoContainer />
-        <div className="blank-middle" />
-        <div className="blank-middle" />
       </article>
     </Layout>
   );

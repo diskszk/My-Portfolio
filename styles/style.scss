@@ -3,15 +3,17 @@
 @import "./home";
 @import "./profile";
 @import "./contact";
-@import "./variable";
 @import "./utils.module.scss";
 @import "./contentsCard";
+@import "./works";
+
+@import "./variable";
 
 @import "./under-edit";
 
 main {
   background-color: $white;
-  // min-height: 100vh;
+  min-height: 100vh;
 }
 .blank {
   &-small {
@@ -19,6 +21,9 @@ main {
   }
   &-middle {
     height: 24px;
+  }
+  &-large {
+    height: 42px;
   }
 }
 
@@ -31,7 +36,8 @@ main {
 }
 
 .page {
-  padding-top: $header-height;
+  padding-top: $header-height + 24px;
+
   
   h1 {
     text-align: center;

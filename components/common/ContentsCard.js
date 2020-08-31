@@ -1,11 +1,16 @@
 import Link from "next/link";
 
-// 名前、画像、説明、URL
+// 名前、画像、説明、ページURL
 const ContentsCard = props => {
   const { data } = props;
 
+  let path = "";
+  if (data.id) {
+    path = `/posts/${data.id}`;
+  }
+
   return (
-    <Link href={data.pageUrl}>
+    <Link href={data.pageUrl} as={path}>
       <li className="contents-card">
         <div>
           <h2>{data.name}</h2>
@@ -17,4 +22,4 @@ const ContentsCard = props => {
   );
 }
 
-export default ContentsCard;
+export default ContentsCard;  

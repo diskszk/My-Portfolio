@@ -22,14 +22,6 @@
     width: 100%;
     margin: 0 auto;
 
-    // .home-my-icon {
-    //   margin: 28px auto;
-    //   height: 200px;
-    //   width: 200px;
-    //   border-radius: 50%;
-    //   filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
-    // }
-
     h1 {
       color: $text-color;
       font-size: 36px;
@@ -41,40 +33,3 @@
     }
   }
 }
-
-// .home-contents {
-//   background-color: $off-white;
-
-//   &-cards {
-//     display: flex;
-//     flex-wrap: wrap;
-//     padding: 0 16px;
-
-//     li:hover {
-//       cursor: pointer;
-//     }
-//   }
-//   &-card {
-//     width: 50%;
-//     text-align: center;
-//     height: 480px;
-        
-//     div {
-//       margin: 0 auto;
-//       height: 320px;
-//       width: 320px;
-//     }
-
-//   }
-// }
-
-// @media screen and (max-width: 900px) {
-//   .home-contents {
-//     &-card {
-//       border: solid 4px $text-color;
-//       width: 100%;
-//       flex-direction: column;
-//       margin: 0 auto 4px 0;
-//     }
-//   }
-// }
