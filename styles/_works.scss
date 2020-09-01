@@ -2,4 +2,36 @@
 
 .works {
   text-align: center;
+
+  &-post {
+    &-link {
+      width: 75vw;
+      margin: 0 auto;
+    }
+    &-image-area {
+      > a {
+        display: block;
+      }
+    }
+    &-github {
+      display: flex;
+      padding: 12px 8px;
+
+      > a, p {
+        display: inline;
+        color: gray;
+      }
+    }
+    &-content {
+      width: 75vw;
+      padding: 16px;
+      margin: 0 auto;
+    }
+
+    &-back {
+      display: block;
+      margin-left: 12vw;
+      padding: 16px;
+    }
+  }
 }

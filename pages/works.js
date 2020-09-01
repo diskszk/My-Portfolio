@@ -1,8 +1,6 @@
 import Layout, { siteTitle } from '../components/layout';
 import Head from 'next/head';
 import Contents from '../components/common/Contents';
-import UnderEdit from '../components/UnderEdit';
-// import { datas } from "../components/works/WorksDatas";
 import { getSortedPostsData } from '../lib/posts';
 
 // export async function getStaticProps() {

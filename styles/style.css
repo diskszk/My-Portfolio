@@ -226,6 +226,39 @@ footer p {
   text-align: center;
 }
 
+.works-post-link {
+  width: 75vw;
+  margin: 0 auto;
+}
+
+.works-post-image-area > a {
+  display: block;
+}
+
+.works-post-github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 8px;
+}
+
+.works-post-github > a, .works-post-github p {
+  display: inline;
+  color: gray;
+}
+
+.works-post-content {
+  width: 75vw;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.works-post-back {
+  display: block;
+  margin-left: 12vw;
+  padding: 16px;
+}
+
 .under-edit {
   padding-top: 64px;
   text-align: center;

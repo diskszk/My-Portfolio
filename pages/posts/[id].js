@@ -25,6 +25,7 @@ export const getStaticProps = async ({ params }) => {
   }
 }
 
+// 記事の見た目
 const Post = ({ postData }) => {
 
   return (
@@ -32,14 +33,27 @@ const Post = ({ postData }) => {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article className="page">
-        {postData.title}
-        <br />
-        {postData.id}
-        <br />
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        <Link href="/works">
-          <a>
+      <article className="page works-post">
+        <h1>{postData.name}</h1>
+        <div className="blank-middle" />
+        <div className="works-post-link">
+          <div className="works-post-image-area">
+            <a href={postData.siteUrl} target="_blank" rel="noopener noreferrer">
+              <img src={postData.image} alt={postData.id}/>
+            </a>
+          </div>
+          <div className="works-post-github">
+            <a href={postData.gitRepo} target="_blank" rel="noopener noreferrer">
+              <p>GitHubリポジトリはこちら</p>
+              <img className="github" src="/images/icons/GitHub-Mark-64px.png" />
+            </a>
+          </div>
+        </div>
+        <div className="works-post-content">
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </div>
+        <Link href="/works" >
+          <a className="works-post-back">
            もどる
           </a>
         </Link>
