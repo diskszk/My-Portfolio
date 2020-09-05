@@ -244,13 +244,17 @@ footer p {
 
 .works-post-github > a, .works-post-github p {
   display: inline;
-  color: gray;
+  color: green;
 }
 
 .works-post-content {
   width: 75vw;
   padding: 16px;
   margin: 0 auto;
+}
+
+.works-post-content a {
+  color: green;
 }
 
 .works-post-back {

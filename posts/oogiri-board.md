@@ -24,7 +24,17 @@ React / Redux / Firebase / Firestore /
 Material-UI / GitHub
 
 ## 開発方法
-GitHubのIssuesに改善したい箇所をあげていき、それに対してのbranchをGitHubで切り分けて開発を行っております。
+GitHubのIssuesに改善したい項目をあげていき、それに対してのbranchをGitHubで切り分けて修正・機能追加等の管理を行っております。
+
+## 機能
+
+### ホスティング
+Googleが提供するFirebaseのホスティングサービスを利用しホスティングしています。
+
+### データベース
+同じくGoogle提供のFirebaseより、FirestoreというNoSQL型のDBを利用し、ユーザーの投稿を保存・参照しています。
+
+ユーザーが投稿した画像ファイルに関してはFirebase Storageを使用し、クラウド上に保存・参照しています。
 
 ## WebサイトのURL
 https://oogiri-board-production.web.app/

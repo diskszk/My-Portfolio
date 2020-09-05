@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from 'next/head';
 
 // 名前、画像、説明、ページURL
 const ContentsCard = props => {
