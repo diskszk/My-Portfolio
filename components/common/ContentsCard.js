@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Head from 'next/head';
 
 // 名前、画像、説明、ページURL
 const ContentsCard = props => {
@@ -7,7 +6,7 @@ const ContentsCard = props => {
 
   let path = "";
   if (data.id) {
-    path = `/posts/${data.id}`;
+    path = `/works/${data.id}`;
   }
 
   return (

@@ -2,7 +2,7 @@
 name: "大喜利掲示板"
 image: "/images/under-edditing.png"
 description: "React / Redux / TypeScript / Firestore 等の技術を用いて開発した大喜利をする為の掲示板サイト"
-pageUrl: "./posts/[id]"
+pageUrl: "./works/[id]"
 path: ""
 siteUrl: "https://oogiri-board-production.web.app/"
 gitRepo: "https://github.com/Oogiri-Board/Oogiri-Board"

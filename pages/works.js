@@ -1,20 +1,19 @@
 import Layout, { siteTitle } from '../components/layout';
 import Head from 'next/head';
 import Contents from '../components/common/Contents';
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedWorksData } from '../lib/works';
 
-// export async function getStaticProps() {
 export const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
+  const allWorksData = getSortedWorksData();
   return {
     props: {
-      allPostsData
+      allWorksData
     }
   }
 }
 
-const Works = ({ allPostsData }) => {
-  const datas = allPostsData;
+const Works = ({ allWorksData }) => {
+  const datas = allWorksData;
 
   return (
     <Layout>

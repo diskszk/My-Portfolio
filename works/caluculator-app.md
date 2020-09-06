@@ -2,7 +2,7 @@
 name: "計算機アプリ"
 image: "/images/calculator.png"
 description: "Reactを使用して初めて作成した計算機能を持つWebアプリケーション"
-pageUrl: "./posts/[id]"
+pageUrl: "./works/[id]"
 path: ""
 siteUrl: "https://diskszk.github.io/Calculator-App/"
 gitRepo: "https://github.com/diskszk/Calculator-App"

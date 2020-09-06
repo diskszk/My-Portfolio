@@ -14,10 +14,10 @@ export const datas = [
     repositoryUrl: "",
   },
   {
-    name: "studies",
+    name: "library",
     image: "/images/icons/f_f_object_173_s512_f_object_173_1bg.png",
-    description: "勉強の記録",
-    pageUrl: "./studies",
+    description: "これまで読んだ本の紹介",
+    pageUrl: "./library",
     siteUrl: "",
     repositoryUrl: "",
   },

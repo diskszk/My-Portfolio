@@ -2,7 +2,7 @@
 name: "My Portfolio"
 image: "/images/my-portfolio.png"
 description: "Next.jsを使ってみたくて作成したポートフォリオサイト"
-pageUrl: "./posts/[id]"
+pageUrl: "./works/[id]"
 path: ""
 siteUrl: "https://my-portfolio-d3e08.web.app/"
 gitRepo: "https://github.com/diskszk/My-Portfolio"
