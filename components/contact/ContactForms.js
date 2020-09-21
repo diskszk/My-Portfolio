@@ -4,7 +4,9 @@ import Button from '@material-ui/core/Button';
 import { SendNotificationToSlack } from './SendNotificationToSlack';
 import { validateEmailFormat, validateRequiredInput } from '../../functions/validater';
 
-const ContactForms = () => {
+const ContactForms = props => {
+  const { isModalOpen, openModal } = props;
+
   const [name, setName] = useState(""),
         [email, setEmail] = useState(""),
         [description, setDescription] = useState("");
@@ -21,18 +23,19 @@ const ContactForms = () => {
   });
 
   const clickSendButton = () => {
-
     const isBlank = validateRequiredInput(name, email, description);
     const isValidEmail = validateEmailFormat(email);
 
     if (isBlank) {
-      alert('必須入力欄が空白です。');
+      openModal('必須入力欄が空白です。');
+      
       return false;
     } else if (!isValidEmail) {
-      alert('メールアドレスの書式が異なります。');
+      openModal('メールアドレスの書式が異なります。')
       return false;
     } else {
       SendNotificationToSlack(name, email, description);
+      openModal('お問い合わせの送信が完了致しました。')
       
       // 入力フォームを初期化
       setName("");

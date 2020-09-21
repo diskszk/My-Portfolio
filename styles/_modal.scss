@@ -1,0 +1,35 @@
+@import "./variable";
+
+.modal {
+  padding-top: $header-height + 24px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  &-inner {
+    position: absolute;
+    z-index: 1;
+    top: 24%;
+    right: 0;
+    left: 0;
+    width: 600px;
+    padding-bottom: 48px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &-content {
+    // width: 384px;
+    line-height: 32px;
+    margin: 36px auto;
+
+    > p {
+      padding: 32px ;
+    }
+  }
+}
