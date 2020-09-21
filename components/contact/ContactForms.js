@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import TextInput from "./TextInput";
 import Button from '@material-ui/core/Button';
 import { SendNotificationToSlack } from './SendNotificationToSlack';
+import { validateEmailFormat, validateRequiredInput } from '../../functions/validater';
 
 const ContactForms = () => {
   const [name, setName] = useState(""),
@@ -20,12 +21,24 @@ const ContactForms = () => {
   });
 
   const clickSendButton = () => {
-    SendNotificationToSlack(name, email, description);
+
+    const isBlank = validateRequiredInput(name, email, description);
+    const isValidEmail = validateEmailFormat(email);
+
+    if (isBlank) {
+      alert('必須入力欄が空白です。');
+      return false;
+    } else if (!isValidEmail) {
+      alert('メールアドレスの書式が異なります。');
+      return false;
+    } else {
+      SendNotificationToSlack(name, email, description);
       
-    // 入力フォームを初期化
-    setName("");
-    setEmail("");
-    setDescription("");
+      // 入力フォームを初期化
+      setName("");
+      setEmail("");
+      setDescription("");
+    }
   }
 
   return (
