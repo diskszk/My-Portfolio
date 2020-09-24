@@ -11,9 +11,9 @@ export const pages = {
     contents: "Works",
     path: "/works"
   },
-  studies: {
-    contents: "Studies",
-    path: "/studies"
+  library: {
+    contents: "Library",
+    path: "/library"
   },
   contact: {
     contents: "Contact",

@@ -2,13 +2,13 @@ export const datas = [
   {
     name: "profile",
     image: "/images/icons/f_f_object_149_s512_f_object_149_0bg.png",
-    description: "わたしの自己紹介",
+    description: "自己紹介",
     pageUrl: "./profile",
   },
   {
     name: "works",
     image: "/images/icons/f_f_business_55_s512_f_business_55_1bg.png",
-    description: "いままで作った作品の紹介",
+    description: "制作物の紹介",
     pageUrl: "./works",
     siteUrl: "",
     repositoryUrl: "",
@@ -16,7 +16,7 @@ export const datas = [
   {
     name: "library",
     image: "/images/icons/f_f_object_173_s512_f_object_173_1bg.png",
-    description: "これまで読んだ本の紹介",
+    description: "読んだ本の紹介",
     pageUrl: "./library",
     siteUrl: "",
     repositoryUrl: "",

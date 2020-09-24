@@ -4,3 +4,19 @@
   text-align: center;
   
 }
+
+.book {
+  &-img {
+    display: inline-block;
+    width: 128px;
+    margin: 0 auto;
+  }
+
+  > p {
+    width: 60%;
+    margin: 16px auto;
+  }
+  &-description {
+    text-align: left;
+  }
+}

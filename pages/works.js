@@ -22,7 +22,7 @@ const Works = ({ allWorksData }) => {
       </Head>
       <article className="page works">
         <h1>Works</h1>
-        <p>いままで作成した作品を紹介します。</p>
+        <p>制作物を紹介します。</p>
         <Contents
           datas={datas}
         />

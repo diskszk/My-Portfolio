@@ -1,7 +1,7 @@
 ---
 name: "My Portfolio"
 image: "/images/my-portfolio.png"
-description: "Next.jsを使ってみたくて作成したポートフォリオサイト"
+description: "Next.jsを使って作成したポートフォリオサイト。お問い合わせをSlackに送ったりWebAPIを使っての情報の取得等を取り入れました。"
 pageUrl: "./works/[id]"
 path: ""
 siteUrl: "https://my-portfolio-d3e08.web.app/"
@@ -18,8 +18,6 @@ Next.jsを使って開発しました。
 2020年8月中旬頃
 
 ## 作成した目的
-Next.jsに触ってみたいという想いでNext.jsを使って開発しました。
-
 今まで自分が何を勉強したかを見やすくまとめたかったので作成しました。
 
 ## 使用した技術

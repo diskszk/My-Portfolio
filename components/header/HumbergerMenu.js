@@ -3,7 +3,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import HomeIcon from '@material-ui/icons/Home';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
-import CodeIcon from '@material-ui/icons/Code';   
+import CodeIcon from '@material-ui/icons/Code';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import EmailIcon from '@material-ui/icons/Email';
 
@@ -12,7 +12,7 @@ import { pages } from './PagesData';
 const HumbergerMenu = () => {
 
 
-  const sideMenus = ["Home", "Profile", "Works", "Studies"];
+  const sideMenus = ["Home", "Profile", "Works", "Library"];
 
   return (
     <div className="humberger-menu">
@@ -47,7 +47,7 @@ const HumbergerMenu = () => {
           </li>
           <li>
             <MenuBookIcon />
-            <HeaderMenuItem page={pages.studies} />
+            <HeaderMenuItem page={pages.library} />
           </li>
           <li>
             <EmailIcon />

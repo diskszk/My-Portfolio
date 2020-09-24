@@ -267,6 +267,21 @@ footer p {
   text-align: center;
 }
 
+.book-img {
+  display: inline-block;
+  width: 128px;
+  margin: 0 auto;
+}
+
+.book > p {
+  width: 60%;
+  margin: 16px auto;
+}
+
+.book-description {
+  text-align: left;
+}
+
 .modal {
   padding-top: 88px;
   background-color: rgba(0, 0, 0, 0.5);
