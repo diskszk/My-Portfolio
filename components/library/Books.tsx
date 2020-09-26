@@ -56,7 +56,12 @@ const booksInfo: BooksInfo[] = [
     author: 'j.d.salinger',
     title: "theCatcherInTheRye",
     isbnCode: "9784102057049"
-  }
+  },
+  {
+    author: 'j.d.salinger',
+    title: "フラニーとズーイ",
+    isbnCode: "9784560090008"
+  },
 ];
 
 // const getBooksData = booksInfo.map(async (bookInfo: BooksInfo): Promise<Book[]> => {
