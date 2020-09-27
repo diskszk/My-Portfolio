@@ -32,23 +32,44 @@ type Response = {
 // 引数ISBNコード
 // GoogleBooksAPIからISBNコードに対応する情報を取得する
 const fetchBookData = async (bookInfo: BookInfo): Promise<Response> => {
+
+  console.log(`fetching ${bookInfo.title}`);
+
   const url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + bookInfo.isbnCode;
-  const res = await fetch(url, { method: 'GET' });
+  const res = await fetch(url, { method: 'GET' })
   const json: Response = await res.json();
   return json;
 }
 
 // APIから受け取った書籍データを1つを表示用データに形成する
 const getBookData = (fetchedBookData: Response): Book => {
+  let image = ""
+
   const bookData = fetchedBookData.items.map((item) => {
+
+    if (!item.volumeInfo.imageLinks) {
+      // 画像なし
+      image = "#"
+    }
     return item.volumeInfo;
   })
-  return {
-    author: bookData[0].authors[0],
-    title: bookData[0].title,
-    description: bookData[0].description,
-    thumbnail: bookData[0].imageLinks.thumbnail,
-    infoLink: bookData[0].infoLink
+  // 画像なし時の処理（応急処置）
+  if (image) {
+    return {
+      author: bookData[0].authors[0],
+      title: bookData[0].title,
+      description: bookData[0].description,
+      thumbnail: image,
+      infoLink: bookData[0].infoLink
+    }
+  } else {
+    return {
+      author: bookData[0].authors[0],
+      title: bookData[0].title,
+      description: bookData[0].description,
+      thumbnail: bookData[0].imageLinks.thumbnail,
+      infoLink: bookData[0].infoLink
+    }
   }
 }
 
@@ -67,6 +88,9 @@ const Books = () => {
       .then((books) => {
         setBooks(books);
       })
+      .catch((e) => {
+        console.error("Eroor" + e)
+      });
   }, [setBooks]);
 
   return (
