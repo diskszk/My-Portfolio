@@ -1,8 +1,9 @@
-// import { searchBook } from './searchBook';
 import React, { useEffect, useState } from 'react';
 import fetch from 'node-fetch';
+import BookCards from './BookCard';
+import { booksInfo, BookInfo } from './data';
 
-// 使うパラメータ
+// 使用するパラメータ
 type Book = {
   author: string;
   title: string;
@@ -11,7 +12,7 @@ type Book = {
   infoLink: string;
 }
 
-// 受け取るパラメータ
+// APIからGETするパラメータ
 type ResponseItem = {
   volumeInfo: {
     title: string;
@@ -27,110 +28,69 @@ type Response = {
   items: ResponseItem[]
 }
 
-// const booksData: Book[] = [
-//   {
-//     author: "mozart",
-//     title: "第九"
-//   },
-//   {
-//     author: "sagan",
-//     title: "悲しみよこんにちは"
-//   },
-//   {
-//     author: "hemingway",
-//     title: "老人と海"
-//   }
-// ];
-type BooksInfo = {
-  author: string;
-  title: string;
-  isbnCode: string;
-}
-const booksInfo: BooksInfo[] = [
-  {
-    author: 'Nastume Souseki',
-    title: "bochan",
-    isbnCode: "9784003101032",
-  },
-  {
-    author: 'j.d.salinger',
-    title: "theCatcherInTheRye",
-    isbnCode: "9784102057049"
-  },
-  {
-    author: 'j.d.salinger',
-    title: "フラニーとズーイ",
-    isbnCode: "9784560090008"
-  },
-];
-
-// const getBooksData = booksInfo.map(async (bookInfo: BooksInfo): Promise<Book[]> => {
-const getBooksData = async (bookInfo: BooksInfo): Promise<Book[]> => {
-
-  // JSON形式の本の情報一つを受け取る
-  const response = await fetchBookInfo(bookInfo.isbnCode)
-
-  const books = response.items.map((book: ResponseItem, key: number) => {
-    const author = book.volumeInfo.authors[0];
-    const title = book.volumeInfo.title;
-    const description = book.volumeInfo.description;
-    const thumbnail = book.volumeInfo.imageLinks.thumbnail;
-    const infoLink = book.volumeInfo.infoLink;
-
-    return {
-      author: author,
-      title: title,
-      description: description,
-      thumbnail: thumbnail,
-      infoLink: infoLink
-    };
-  });
-
-  return books;
-};
-
-// GetBooksDataから呼び出され、JSON形式の本の情報を一つ返す
+// GetBooksDataから呼び出され、Response型で本の情報を一つ返す
 // 引数ISBNコード
 // GoogleBooksAPIからISBNコードに対応する情報を取得する
-const fetchBookInfo = async (isbnCode: string): Promise<Response> => {
-
-  const url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbnCode;
-
-  const res = await fetch((url), { method: 'GET' });
-  const json = res.json();
-
-  console.dir(json, { depth: null });
-
+const fetchBookData = async (bookInfo: BookInfo): Promise<Response> => {
+  const url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + bookInfo.isbnCode;
+  const res = await fetch(url, { method: 'GET' });
+  const json: Response = await res.json();
   return json;
+}
+
+// APIから受け取った書籍データを1つを表示用データに形成する
+const getBookData = (fetchedBookData: Response): Book => {
+  const bookData = fetchedBookData.items.map((item) => {
+    return item.volumeInfo;
+  })
+  return {
+    author: bookData[0].authors[0],
+    title: bookData[0].title,
+    description: bookData[0].description,
+    thumbnail: bookData[0].imageLinks.thumbnail,
+    infoLink: bookData[0].infoLink
+  }
 }
 
 const Books = () => {
 
   const [books, setBooks] = useState<Book[]>([]);
+
+  const result = Promise.all(booksInfo.map(async (bookInfo) => {
+    const json = await fetchBookData(bookInfo);
+    const shapedData = getBookData(json);
+    return shapedData;
+  }));
+
   useEffect(() => {
-    const data = getBooksData(booksInfo[0])
-      .then((booksData) => {
-        setBooks(booksData);
+    result
+      .then((books) => {
+        setBooks(books);
       })
-  }, []);
+  }, [setBooks]);
 
   return (
     <ul>
-      {books.map((book: Book, key: number) => {
-        return (
-          <li className="book">
-            <div className="book-img">
-              <img src={book.thumbnail} />
-            </div>
-            <p>著者: {book.author}</p>
-            <p>タイトル: {book.title}</p>
-            <p className="book-description">{book.description}</p>
-            <a href={book.infoLink}>本の詳細はこちら</a>
-          </li>
+      {books.length ? (
+        <>
+          {books.map((book, key) => {
+            return (
+              <BookCards
+                key={key}
+                author={book.author}
+                description={book.description}
+                infoLink={book.infoLink}
+                thumbnail={book.thumbnail}
+                title={book.title}
+              />
+            );
+          })}
+        </>
+      ) : (
+          <h1>Loading...</h1>
         )
-      })}
+      }
     </ul>
   );
 }
-
 export default Books;

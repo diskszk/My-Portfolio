@@ -35,6 +35,9 @@ Googleが提供するFirebaseのホスティングサービスを利用しホス
 ### Worksページ
 Pre-renderingの機能を使って、分けて管理しているマークダウンファイルからWebページを静的生成しています。
 
+### Libraryページ
+GoogleBooksAPIを用いて取得した本の情報を画面に描写しています。
+
 ### Contactページ
 Slackと連携し、Contactページで入力内容頂いた内容をSlackに送信しています。
 

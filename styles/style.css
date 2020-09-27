@@ -267,18 +267,39 @@ footer p {
   text-align: center;
 }
 
+.book {
+  width: 80%;
+  min-height: 230px;
+  padding: 8px;
+  margin: 8px auto;
+  border: 1px solid rgba(44, 44, 44, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 .book-img {
-  display: inline-block;
-  width: 128px;
-  margin: 0 auto;
+  min-width: 128px;
+  line-height: 100%;
+  position: relative;
 }
 
-.book > p {
-  width: 60%;
-  margin: 16px auto;
+.book-img > img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border: .5px solid #444;
 }
 
-.book-description {
+.book-info {
+  padding-left: 16px;
+  display: block;
   text-align: left;
 }
 

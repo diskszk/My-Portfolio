@@ -6,17 +6,31 @@
 }
 
 .book {
+  width: 80%;
+  min-height: 230px;
+  padding: 8px;
+  margin: 8px auto;
+  border: 1px solid rgba(44, 44, 44, .8);
+  display: flex;
+  flex-direction: row;
+
   &-img {
-    display: inline-block;
-    width: 128px;
-    margin: 0 auto;
+    min-width: 128px;
+    line-height: 100%;
+    position: relative;
+    
+    > img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      border: .5px solid #444;
+    }
   }
 
-  > p {
-    width: 60%;
-    margin: 16px auto;
-  }
-  &-description {
+  &-info {
+    padding-left: 16px;;
+    display: block;
     text-align: left;
   }
 }
