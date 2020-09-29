@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import fetch from 'node-fetch';
 import BookCards from './BookCard';
+import ErrorMessage from '../common/ErrorMessage';
 import { booksInfo, BookInfo } from './data';
 
 // 使用するパラメータ
@@ -33,43 +34,32 @@ type Response = {
 // GoogleBooksAPIからISBNコードに対応する情報を取得する
 const fetchBookData = async (bookInfo: BookInfo): Promise<Response> => {
 
-  console.log(`fetching ${bookInfo.title}`);
-
   const url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:' + bookInfo.isbnCode;
   const res = await fetch(url, { method: 'GET' })
   const json: Response = await res.json();
+
   return json;
 }
 
 // APIから受け取った書籍データを1つを表示用データに形成する
 const getBookData = (fetchedBookData: Response): Book => {
-  let image = ""
 
-  const bookData = fetchedBookData.items.map((item) => {
+  const bookData = fetchedBookData.items.map((item: ResponseItem) => {
 
+    // 取得したデータが画像なしの場合not found時の画像のリンクを追加
     if (!item.volumeInfo.imageLinks) {
-      // 画像なし
-      image = "#"
+      item.volumeInfo.imageLinks = {
+        thumbnail: "/images/no_image_tate.jpg"
+      }
     }
     return item.volumeInfo;
-  })
-  // 画像なし時の処理（応急処置）
-  if (image) {
-    return {
-      author: bookData[0].authors[0],
-      title: bookData[0].title,
-      description: bookData[0].description,
-      thumbnail: image,
-      infoLink: bookData[0].infoLink
-    }
-  } else {
-    return {
-      author: bookData[0].authors[0],
-      title: bookData[0].title,
-      description: bookData[0].description,
-      thumbnail: bookData[0].imageLinks.thumbnail,
-      infoLink: bookData[0].infoLink
-    }
+  });
+  return {
+    author: bookData[0].authors[0],
+    title: bookData[0].title,
+    description: bookData[0].description,
+    thumbnail: bookData[0].imageLinks.thumbnail,
+    infoLink: bookData[0].infoLink
   }
 }
 
@@ -77,43 +67,52 @@ const Books = () => {
 
   const [books, setBooks] = useState<Book[]>([]);
 
-  const result = Promise.all(booksInfo.map(async (bookInfo) => {
-    const json = await fetchBookData(bookInfo);
-    const shapedData = getBookData(json);
-    return shapedData;
-  }));
+  // ErrorMessageコンポーネントの表示を制限
+  const [isError, setIsError] = useState(false);
 
+  // ページ遷移時のレンダーとは別に[さらに読み込み]ボタンを作って押下ごとに+5でbooks配列に追加したい・・・
   useEffect(() => {
-    result
+    Promise.all(booksInfo.map(async (bookInfo: BookInfo) => {
+      const json: Response = await fetchBookData(bookInfo);
+      return getBookData(json);
+    }))
       .then((books) => {
+
+        // fetchに成功したらbooks配列に一気に詰める
         setBooks(books);
-      })
-      .catch((e) => {
-        console.error("Eroor" + e)
+      }).catch((e) => {
+
+        // fetchに失敗したらエラー時のコンポーネントを表示する
+        console.error(`エラー: ${e}`);
+        setIsError(true);
       });
-  }, [setBooks]);
+  }, [setBooks, setIsError]);
 
   return (
     <ul>
-      {books.length ? (
+      {!isError ? (
         <>
-          {books.map((book, key) => {
-            return (
-              <BookCards
-                key={key}
-                author={book.author}
-                description={book.description}
-                infoLink={book.infoLink}
-                thumbnail={book.thumbnail}
-                title={book.title}
-              />
-            );
-          })}
+          {books.length ? (
+            <>
+              {books.map((book: Book, key: number) => {
+                return (
+                  <BookCards
+                    key={key}
+                    author={book.author}
+                    description={book.description}
+                    infoLink={book.infoLink}
+                    thumbnail={book.thumbnail}
+                    title={book.title}
+                  />
+                );
+              })}
+            </>
+            // books配列に格納されるまでLoadingの文字を表示する
+          ) : (<h1>Loading...</h1>)
+          }
         </>
-      ) : (
-          <h1>Loading...</h1>
-        )
-      }
+        // fetch時にエラーが起きた時に表示する
+      ) : (<ErrorMessage />)}
     </ul>
   );
 }

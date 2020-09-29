@@ -44,3 +44,18 @@ main {
     font-weight: normal;
   }
 }
+
+.error-message {
+  min-height: 180px;
+  min-width: 66%;
+  margin: 0 auto;
+  padding-top: 32px;
+  // border: 1px solid black;
+
+}
+@media screen and (max-width: 900px) {
+  .error-message {
+    width: 100%;
+    font-size: smaller;
+  }
+}

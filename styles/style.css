@@ -267,8 +267,14 @@ footer p {
   text-align: center;
 }
 
+@media screen and (max-width: 900px) {
+  .library > ul {
+    padding-left: 0;
+  }
+}
+
 .book {
-  width: 80%;
+  min-width: 80%;
   min-height: 230px;
   padding: 8px;
   margin: 8px auto;
@@ -369,5 +375,19 @@ main {
 .page h1 {
   text-align: center;
   font-weight: normal;
+}
+
+.error-message {
+  min-height: 180px;
+  min-width: 66%;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+@media screen and (max-width: 900px) {
+  .error-message {
+    width: 100%;
+    font-size: smaller;
+  }
 }
 /*# sourceMappingURL=style.css.map */

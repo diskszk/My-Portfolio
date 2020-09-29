@@ -4,6 +4,7 @@ export type BookInfo = {
   title: string;
   isbnCode: string;
 }
+
 export const booksInfo: BookInfo[] = [
   {
     author: '夏目漱石',
@@ -55,14 +56,14 @@ export const booksInfo: BookInfo[] = [
   //   title: "1Q84",
   //   isbnCode: "9784101001593"
   // },
-  // {
-  //   author: '村上春樹',
-  //   title: "ノルウェイの森",
-  //   isbnCode: "9784061848924"
-  // },
-  // {
-  //   author: 'サガン',
-  //   title: "悲しみよこんにちは",
-  //   isbnCode: "9784102118283"
-  // },
+  {
+    author: '村上春樹',
+    title: "ノルウェイの森",
+    isbnCode: "9784061848924"
+  },
+  {
+    author: 'サガン',
+    title: "悲しみよこんにちは",
+    isbnCode: "9784102118283"
+  },
 ];
