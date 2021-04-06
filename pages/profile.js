@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Layout, {siteTitle} from "../components/layout";
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
 import MyIcon from "../components/common/MyIcon";
 import Info from "../components/profile/Info";
-import AccountInfoContainer from '../components/profile/AccountInfoContainer';
+import AccountInfoContainer from "../components/profile/AccountInfoContainer";
 
 const Profile = () => {
   return (
@@ -21,6 +21,6 @@ const Profile = () => {
       </article>
     </Layout>
   );
-}
+};
 
 export default Profile;

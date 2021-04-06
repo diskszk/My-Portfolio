@@ -13,14 +13,14 @@ export const datas = [
     siteUrl: "",
     repositoryUrl: "",
   },
-  {
-    name: "library",
-    image: "/images/icons/f_f_object_173_s512_f_object_173_1bg.png",
-    description: "読んだ本の紹介",
-    pageUrl: "./library",
-    siteUrl: "",
-    repositoryUrl: "",
-  },
+  // {
+  //   name: "library",
+  //   image: "/images/icons/f_f_object_173_s512_f_object_173_1bg.png",
+  //   description: "読んだ本の紹介",
+  //   pageUrl: "./library",
+  //   siteUrl: "",
+  //   repositoryUrl: "",
+  // },
   {
     name: "contact",
     image: "/images/icons/f_f_business_12_s512_f_business_12_2bg.png",
