@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 // 名前、画像、説明、ページURL
-const ContentsCard = props => {
+const ContentsCard = (props) => {
   const { data } = props;
 
   let path = "";
@@ -20,6 +20,6 @@ const ContentsCard = props => {
       </li>
     </Link>
   );
-}
+};
 
-export default ContentsCard;  
+export default ContentsCard;
